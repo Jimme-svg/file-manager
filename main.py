@@ -1,45 +1,44 @@
-# Создаем пустой список
+# Create an empty list
 my_list = []
 
 while True:
-    # Выводим меню
-    print("\nВыберите действие:")
-    print("1. Добавить слово в список")
-    print("2. Удалить слово из списка")
-    print("3. Просмотреть список")
+    # Display the menu
+    print("\nChoose an action:")
+    print("1. Add a word to the list")
+    print("2. Remove a word from the list")
+    print("3. View the list")
     
-    choice = input("Введите номер действия (или 'stop' для выхода): ")
+    choice = input("Enter the action number (or 'stop' to exit): ")
     
-    # Проверяем хочет ли пользователь выйти
+    # Check if the user wants to exit
     if choice.lower() == 'stop':
-        print("Программа завершена.")
+        print("Program terminated.")
         break
     
-    # Обрабатываеь выбор пользователя
+    # Process the user's choice
     elif choice == '1':
-        word = input("Введите слово для добавления: ")
+        word = input("Enter a word to add: ")
         my_list.append(word)
-        print(f"Слово '{word}' добавлено в список.")
+        print(f"Word '{word}' has been added to the list.")
         
     elif choice == '2':
         if len(my_list) == 0:
-            print("Список пуст!")
+            print("The list is empty!")
         else:
-            word = input("Введите слово для удаления: ")
+            word = input("Enter a word to remove: ")
             if word in my_list:
                 my_list.remove(word)
-                print(f"Слово '{word}' удалено из списка.")
+                print(f"Word '{word}' has been removed from the list.")
             else:
-                print("Такого слова нет в списке!")
+                print("This word is not in the list!")
                 
     elif choice == '3':
         if len(my_list) == 0:
-            print("Список пуст!")
+            print("The list is empty!")
         else:
-            print("Текущий список:")
+            print("Current list:")
             for i, word in enumerate(my_list, 1):
                 print(f"{i}. {word}")
                 
     else:
-        print("Неверный выбор! Пожалуйста, выберите 1, 2 или 3.")
- # Если нужно что то подредачить говорите, а так задание готово
+        print("Invalid choice! Please choose 1, 2, or 3.")
